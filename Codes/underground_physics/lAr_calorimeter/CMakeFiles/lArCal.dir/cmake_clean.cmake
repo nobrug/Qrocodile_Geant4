@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/lArCal.dir/lArCal.cc.o"
+  "CMakeFiles/lArCal.dir/lArCal.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALActionInitialization.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALActionInitialization.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALCalorHit.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALCalorHit.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALCryostatVolumes.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALCryostatVolumes.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALEMModule.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALEMModule.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALEMModuleSD.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALEMModuleSD.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALHadModule.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALHadModule.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALHadModuleSD.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALHadModuleSD.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALMaterialConsultant.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALMaterialConsultant.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALPrimaryGeneratorAction.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALPrimaryGeneratorAction.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALRunAction.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALRunAction.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALSteppingAction.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALSteppingAction.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALSteppingVerbose.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALSteppingVerbose.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALTBEventAction.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALTBEventAction.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALTBEventActionMessenger.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALTBEventActionMessenger.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALTestbeamSetup.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALTestbeamSetup.cc.o.d"
+  "CMakeFiles/lArCal.dir/src/FCALTestbeamSetupSD.cc.o"
+  "CMakeFiles/lArCal.dir/src/FCALTestbeamSetupSD.cc.o.d"
+  "lArCal"
+  "lArCal.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/lArCal.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

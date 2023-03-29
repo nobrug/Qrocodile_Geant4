@@ -1,0 +1,56 @@
+#define CRYGenerator_h
+
+#include "CRYParticle.h"
+#include <vector>
+#include <map>
+
+#include "CRYPrimary.h"
+
+class CRYUtils;
+class CRYBinning;
+class CRYPdf;
+class CRYSetup;
+class CRYWeightFunc;
+
+class CRYGenerator {
+
+public:
+  CRYGenerator(CRYSetup *setup);
+
+  //ways to generate an event
+  //a single cosmic shower is returned
+  //Ownership _IS_ returned 
+  std::vector<CRYParticle*>* genEvent();
+  void genEvent(std::vector<CRYParticle*> *retList);
+
+  //Time that has been simulated by this instance
+  double timeSimulated() {return _primary->timeSimulated();}
+
+  //Pointer to the primary particle
+  //Note that ownership is not transfered
+  CRYParticle *primaryParticle() {return _primaryPart;}
+
+  // which set of data tables was used 
+  // the particles returned will be in a smaller box 
+  // (as specified in the setup 
+  double boxSizeUsed() {return _boxSize;}
+
+private:
+  CRYPrimary *_primary;
+  CRYUtils *_utils;
+  CRYBinning *_primaryBinning,*_secondaryBinning;
+  CRYPdf *_nParticlesPDF;
+  CRYPdf *_particleFractionsPDF;
+  std::map<int,CRYParticle::CRYId> _idDict;
+  std::map<CRYParticle::CRYId, CRYPdf*> _kePdfs,_latPdfs;
+  std::map<CRYParticle::CRYId, CRYPdf*> _timePdfs,_cosThetaPdfs,_chargePdfs;
+  std::map<CRYParticle::CRYId, bool> _tallyList;
+  double _boxSize;
+  double _subboxSize;
+  int _maxParticles,_minParticles;
+  CRYSetup *_setup;
+  CRYWeightFunc *_primaryWeighting;
+  CRYParticle *_primaryPart;
+};
+
+#endif
