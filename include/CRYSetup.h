@@ -1,0 +1,67 @@
+#ifndef CRYSETUP_H
+#define CRYSETUP_H
+
+#include <string>
+#include <map>
+#include "CRYUtils.h"
+
+class CRYData;
+
+class CRYSetup {
+
+public:
+  // list of all available parameters!
+  enum CRYParms { parmMin,
+		  returnNeutrons=parmMin,  //include neutrons in return list (0,1)
+		  returnProtons,           //include protons?
+		  returnGammas,            //include gammas?
+		  returnElectrons,         //include electrons?
+		  returnMuons,             //include muons?
+		  returnPions,             //include pions?
+		  returnKaons,             //include kaons?
+		  subboxLength,            //length of box to return particles in 
+		  altitude,                //Working altitude 
+		  latitude,                //Working latitude
+		  date,                    //Date (for solar cycle)
+		  nParticlesMin,           //Minimum # of particles to return
+		  nParticlesMax,           //Maximum # of particles to return
+                  xoffset,
+                  yoffset,
+                  zoffset,
+                  parmMax=zoffset };
+
+  // Nominal constructor
+  // config file format is 
+  //  <key> <value>
+  // separated by whitespace
+  // Keys are defined in constructor of CRYSetup
+  CRYSetup(std::string configData, std::string dataDir="./");
+
+  //Nothing to delete
+  ~CRYSetup() {}
+
+  //Get value of parameter
+  double param(CRYSetup::CRYParms parm) {return _parms[parm];}
+  void setParam(CRYSetup::CRYParms parm, double value) { _parms[parm]=value;}
+
+  void setRandomFunction(double (*newFunc)(void)) {_utils->setRandomFunction(newFunc);}
+
+  CRYData *getData(int alt=0) {return _data[alt];}
+  CRYUtils *getUtils() {return _utils;}
+
+private:
+  // Map of enums to parameter values
+  std::map<CRYSetup::CRYParms,double> _parms;
+  // Map of enums to parameter names
+  std::map<CRYSetup::CRYParms,std::string> _parmNames;
+
+  CRYUtils *_utils;
+  std::map<int, CRYData* > _data;
+
+  double parseDate(std::string date); //....convert date string to decimal year
+  bool isLeapYear(int yr); // Returns true if yr is a leap year, false if not
+
+
+};
+
+#endif

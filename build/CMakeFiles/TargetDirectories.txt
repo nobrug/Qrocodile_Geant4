@@ -1,0 +1,8 @@
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/install/strip.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/install/local.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/install.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/list_install_components.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/rebuild_cache.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/edit_cache.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/Qrocodile_G4.dir
+/home/uzh/nobrug/Qrocodile-MC-master/build/CMakeFiles/QROCODILE.dir
